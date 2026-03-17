@@ -1,0 +1,190 @@
+
+[GENERAL]
+# Langue de l’interface utilisateur : 'br', 'de', 'dk', 'en', 'es', 'fr', 'hu', 'it', 'nl', 'no' ou 'pt'
+language = fr
+
+# Dossier où seront enregistrées les photos (plusieurs chemins entre guillemets possibles)
+directory = ~/Pictures/pibooth
+
+# Lancer automatiquement Pibooth au démarrage du Raspberry Pi
+autostart = False
+
+# Temps d’attente avant le lancement automatique (en secondes)
+autostart_delay = 0
+
+# En mode débogage : les exceptions ne sont pas interceptées, les journaux sont plus détaillés,
+# et les anciennes photos sont supprimées au démarrage
+debug = False
+
+# Chemin vers un ou plusieurs plugins personnalisés non installés via pip
+plugins = /home/rpi/pibooth_esp_flash.py, /home/rpi
+
+# Liste des plugins à désactiver après le démarrage (noms entre guillemets possibles)
+plugins_disabled =
+
+# Active un clavier virtuel dans l’interface de configuration
+vkeyboard = False
+
+
+[WINDOW]
+# Dimensions de la fenêtre d’affichage (largeur, hauteur) ou 'fullscreen' pour plein écran
+size = 'fullscreen'
+
+# Couleur de fond (RGB) ou chemin vers une image de fond
+background = (0, 0, 0)
+
+# Nom ou chemin du fichier de police utilisé pour les textes de l’application
+font = Amatic-Bold
+
+# Couleur du texte (R, G, B)
+text_color = (255, 255, 255)
+
+# Éclair de fond (flash visuel) au moment de la capture
+flash = True
+
+# Animation de la dernière photo prise (affiche les captures une par une)
+animate = True
+
+# Durée d’affichage de chaque capture lors de l’animation (en secondes)
+animate_delay = 0.5
+
+# Dans l’état 'finish' : durée d’affichage de la photo finale (0 = jamais affichée)
+finish_picture_delay = 0
+
+# Dans l’état 'wait' : durée d’affichage de la photo finale avant disparition (-1 = toujours affichée)
+wait_picture_delay = 5
+
+# Durée d’affichage de l’état 'chosen' (en secondes, 0 = jamais affiché)
+chosen_delay = 0
+
+# Affiche des flèches indiquant les boutons physiques : 'bottom' (en bas), 'top' (en haut), 'hidden' (caché) ou 'touchscreen' (écran tactile)
+arrows = hidden
+
+# Décalage horizontal appliqué à la position des flèches
+arrows_x_offset = 0
+
+# Durée de la prévisualisation avant capture (en secondes)
+preview_delay = 4
+
+# Afficher un compte à rebours pendant la prévisualisation
+preview_countdown = True
+
+# Arrêter l’aperçu juste avant la capture
+preview_stop_on_capture = False
+
+
+[PICTURE]
+
+template = /home/rpi/templates/picture_template.xml
+
+# Orientation de la photo finale : 'auto', 'portrait' ou 'landscape'
+orientation = landscape
+
+# Choix possibles du nombre de captures (entre 1 et 4) par defaut (4, 1)
+captures = 1
+
+# Effet appliqué aux captures (liste de noms entre guillemets)
+captures_effects = none
+
+# Rogner les bords de chaque capture pour s’adapter au format papier
+captures_cropping = False
+
+# Épaisseur (en pixels) entre les captures et les bordures/textes de la photo finale
+margin_thick = 100
+
+# Texte principal affiché en bas de la photo
+footer_text1 = Marché de Noël de Berneville 2025
+ 
+# Texte secondaire affiché en bas de la photo
+footer_text2 = 
+
+# Couleurs RVB utilisées pour les textes du bas (liste de tuples)
+text_colors = (0, 0, 0)
+
+# Noms de polices ou chemins de fichiers utilisés pour les textes du bas
+text_fonts = ('Amatic-Bold', 'AmaticSC-Regular')
+
+# Alignement des textes du bas : 'left' (gauche), 'center' (centré) ou 'right' (droite)
+text_alignments = left
+
+# Chemin vers un fichier PNG de superposition ayant le même ratio que la photo finale (liste de chemins entre guillemets)
+overlays =
+
+# Couleur de fond (RVB) ou chemin vers une image (liste de tuples ou chemins entre guillemets acceptés)
+backgrounds = (255, 255, 255)
+
+
+
+[CAMERA]
+# Adjust ISO for lighting issues, can be different for preview and capture (list of integers accepted)
+iso = auto
+
+# Flip horizontally the capture
+flip = True
+
+# Rotation de la caméra : 0, 90, 180 ou 270 degrés. Peut être différente pour l’aperçu et la capture (liste d’entiers)
+rotation = 0
+
+# Résolution des photos prises (l’aperçu conservera le même ratio d’image) TAILLE HORIZONTALE PAYSAGE DE L'APN 
+#dorigine en portrait : 1934, 2464
+#la photo c'est du 6 pouces par 4 pouces
+resolution = (3000, 2000)
+
+# Supprimer les captures de la mémoire interne de l’appareil photo (si applicable)
+delete_internal_memory = False
+
+# Type d’appareil photo utilisé (par défaut : gphoto2)
+type = gphoto2
+
+# Méthode de capture utilisée (par défaut : gphoto2)
+capture = gphoto2
+
+# Télécharger automatiquement les photos après la capture
+download = True
+
+
+[PRINTER]
+# Nom de l’imprimante définie dans CUPS (ou utiliser 'default' pour l’imprimante par défaut)
+#printer_name = default
+printer_name = QW410
+
+# Options d’impression transmises à l’imprimante (doit être un dictionnaire Python valide)
+printer_options = {}
+
+# Durée d’affichage de l’écran d’impression (en secondes, 0 pour le désactiver)
+printer_delay = 10
+
+# Nombre de pages envoyées automatiquement à l’impression (ou 'max' pour atteindre le maximum de duplicatas)
+auto_print = 0
+
+# Nombre maximal de pages imprimées avant alerte papier/encre (-1 = illimité)
+max_pages = -1
+
+# Nombre maximal de duplicatas envoyés à l’imprimante (pour éviter le gaspillage)
+max_duplicates = 3
+
+# Nombre de photos imprimées par page (1, 2, 3 ou 4)
+pictures_per_page = 1
+
+
+[CONTROLS]
+# Durée minimale d’appui sur un bouton matériel (en secondes)
+debounce_delay = 0.3
+
+# Délai maximum entre plusieurs appuis pour les considérer comme simultanés (en secondes)
+multi_press_delay = 0.5
+
+# Broche physique GPIO (mode IN) utilisée pour le bouton de prise de photo
+picture_btn_pin = 11
+
+# Broche physique GPIO (mode OUT) qui allume une LED quand le bouton photo est pressé
+picture_led_pin = 7
+
+# Broche physique GPIO (mode IN) utilisée pour le bouton d’impression
+print_btn_pin = 13
+
+# Broche physique GPIO (mode OUT) qui allume une LED quand le bouton impression est pressé
+print_led_pin = 15
+
+# Activer ou non le contrôle via clavier (false = désactivé)
+keyboard = false
